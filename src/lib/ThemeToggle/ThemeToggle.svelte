@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import ThemeToggleIcon from './ThemeToggleIcon.svelte';
 
 	const getIsDarkMode = () => {
 		if (import.meta.env.SSR) {
@@ -19,8 +20,8 @@
 
 	export const setDocumentClassList = () => {
 		isDarkMode
-			? document.documentElement.classList.add('dark')
-			: document.documentElement.classList.remove('dark');
+			? document.documentElement.classList.replace('light', 'dark')
+			: document.documentElement.classList.replace('dark', 'light');
 	};
 
 	const switchDarkMode = () => {
@@ -42,14 +43,13 @@
 
 		if (darkMode) {
 			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.add('light');
 		}
 	</script>
 </svelte:head>
 
-<div>
-	<input type="checkbox" id="theme-toggle" checked={isDarkMode} on:click={switchDarkMode} />
-	<label for="theme-toggle" />
-</div>
+<ThemeToggleIcon bind:isDarkMode on:switchDarkMode={switchDarkMode} />
 
 <style lang="postcss">
 </style>

@@ -2,7 +2,7 @@
 	import '@fontsource-variable/sora';
 	import '../styles/variables.css';
 
-	import ThemeToggle from '$lib/ThemeToggle.svelte';
+	import ThemeToggle from '$lib/ThemeToggle/ThemeToggle.svelte';
 </script>
 
 <ThemeToggle />
