@@ -1,7 +1,19 @@
+/* Light Mode */
 :root {
-	--background-colour: #1a1a1a;
-	--light-colour: #e3e3e3;
+	--background-colour: #e3e3e3;
+	--accent-colour: #c6ff24;
+	--text-colour: #191919;
+	--primary-colour: #f05782;
+	--secondary-colour: #1b998b;
+	--tertiary-colour: #5d8079; /* TODO: Find another one */
+}
+
+/* Dark Mode */
+:root.dark {
+	--background-colour: #191919;
+	--accent-colour: #c6ff24;
+	--text-colour: #e3e3e3;
 	--primary-colour: #edb340;
-	--secondary-colour: #ff4a6d;
-	--tertiary-colour: #5d8079;
+	--secondary-colour: #1b998b;
+	--tertiary-colour: #f05782;
 }
