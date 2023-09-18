@@ -12,5 +12,6 @@
 	:root {
 		font-family: 'Sora Variable', sans-serif;
 		background-color: var(--background-colour);
+		color: var(--text-colour);
 	}
 </style>
