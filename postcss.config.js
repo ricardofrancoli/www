@@ -1,6 +1,7 @@
 import cssnano from 'cssnano';
 import atImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
+import postcssCustomMedia from 'postcss-custom-media';
 
 export default {
 	plugins: [
@@ -13,7 +14,8 @@ export default {
 				'custom-media-queries': true,
 				'media-query-ranges': true
 			}
-		})
+		}),
+		postcssCustomMedia()
 		// TODO: add autoprefixer?
 	]
 };

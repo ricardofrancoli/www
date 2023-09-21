@@ -33,6 +33,9 @@ devDependencies:
   postcss:
     specifier: ^8.4.29
     version: 8.4.29
+  postcss-custom-media:
+    specifier: ^10.0.1
+    version: 10.0.1(postcss@8.4.29)
   postcss-import:
     specifier: ^15.1.0
     version: 15.1.0(postcss@8.4.29)
@@ -2200,8 +2203,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-custom-media@10.0.0(postcss@8.4.29):
-    resolution: {integrity: sha512-NxDn7C6GJ7X8TsWOa8MbCdq9rLERRLcPfQSp856k1jzMreL8X9M6iWk35JjPRIb9IfRnVohmxAylDRx7n4Rv4g==}
+  /postcss-custom-media@10.0.1(postcss@8.4.29):
+    resolution: {integrity: sha512-fil7cosvzlIAYmZJPtNFcTH0Er7a3GveEK4q5Y/L24eWQHmiw8Fv/E5DMkVpdbNjkGzJxrvowOSt/Il9HZ06VQ==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss: ^8.4
@@ -2662,7 +2665,7 @@ packages:
       postcss-color-functional-notation: 6.0.0(postcss@8.4.29)
       postcss-color-hex-alpha: 9.0.2(postcss@8.4.29)
       postcss-color-rebeccapurple: 9.0.0(postcss@8.4.29)
-      postcss-custom-media: 10.0.0(postcss@8.4.29)
+      postcss-custom-media: 10.0.1(postcss@8.4.29)
       postcss-custom-properties: 13.3.0(postcss@8.4.29)
       postcss-custom-selectors: 7.1.4(postcss@8.4.29)
       postcss-dir-pseudo-class: 8.0.0(postcss@8.4.29)

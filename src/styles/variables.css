@@ -17,3 +17,10 @@
 	--secondary-colour: #1b998b;
 	--tertiary-colour: #f05782;
 }
+
+/* Responsive layout widths */
+@custom-media --sm (min-width: 640px);
+@custom-media --md (min-width: 768px);
+@custom-media --lg (min-width: 1024px);
+@custom-media --xl (min-width: 1280px);
+@custom-media --2xl (min-width: 1536px);
