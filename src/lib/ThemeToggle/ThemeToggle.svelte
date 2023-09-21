@@ -39,13 +39,15 @@
 
 <svelte:head>
 	<script>
-		const darkMode = sessionStorage.theme === 'dark';
+		(() => {
+			const isDarkMode = sessionStorage.theme === 'dark';
 
-		if (darkMode) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.add('light');
-		}
+			if (isDarkMode) {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.add('light');
+			}
+		})();
 	</script>
 </svelte:head>
 
