@@ -1,9 +1,15 @@
+<script lang="ts">
+	import About from './about/+page.svelte';
+</script>
+
 <div class="outer-container">
 	<div class="header-container">
 		<h1 class="main-header">Hi <span>👋</span> I'm Ricardo.</h1>
 		<h1 class="secondary-header">A <span class="web-dev-role">web developer</span>.</h1>
 	</div>
 </div>
+
+<About />
 
 <style lang="postcss">
 	@import '../styles/variables.css';
