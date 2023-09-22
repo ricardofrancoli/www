@@ -12,6 +12,15 @@
 			enough to start a new path in this exciting field. And I'm not looking back.
 		</p>
 	</div>
+	<h3>Stack</h3>
+	<ul>
+		<li>Typescript</li>
+		<li>Node.js</li>
+		<li>React</li>
+		<li>Vue.js</li>
+		<!-- TODO: add more -->
+		<!-- NOTE: idea: make it so they're small icons you can move around -->
+	</ul>
 </section>
 
 <style lang="postcss">
