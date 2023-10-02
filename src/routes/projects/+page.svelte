@@ -3,13 +3,51 @@
 	import type { Project as ProjectType } from '../../types/project';
 
 	const projects: ProjectType[] = [
-		{ title: 'test', description: 'testing', links: { github: 'hi' }, screenshot: 'hi' }
+		{
+			title: 'Route Cost Calculator',
+			description:
+				'As the name suggests, this app will calculate the cost of a given route with distance and petrol costs parameters. You can choose either manual mode or something a bit more advanced by searching an origin and destination. Made using React and some simple CSS.',
+			links: {
+				github: 'https://github.com/ricardofrancoli/route-cost-calculator',
+				live: 'https://route-cost-calculator-ricardofrancoli.vercel.app/'
+			},
+			screenshot: '/static/images/route-cost-calculator.webp'
+		},
+		{
+			title: 'World Clock',
+			description:
+				'A little app that was quite a lot of fun to make. It’s a simple but (I think) cool world clock I made using mainly two open source APIs. It introduced me to the hellish world of dates in JavaScript.',
+			links: {
+				github: 'https://github.com/ricardofrancoli/world-clock',
+				live: 'https://world-clock.vercel.app/'
+			},
+			screenshot: '/static/images/world-clock.webp'
+		},
+		{
+			title: 'Quiz App',
+			description:
+				'A little quiz app that gives you different points and results depending on your answers, hence the “Net” in the title. I made it using React and in order to learn to use a UI component library – I chose MaterialUI and it was so much fun really!',
+			links: {
+				github: 'https://github.com/ricardofrancoli/choice-net',
+				live: 'https://choice-net-git-main-ricardofrancoli.vercel.app/'
+			},
+			screenshot: '/static/images/choice-net.webp'
+		},
+		{
+			title: 'Ecomm Site',
+			description:
+				'A mock-up e-commerce site I used to practice my backend skills. Made using NodeJS, Express and OOP for some repositories made from scratch.',
+			links: { github: 'https://github.com/ricardofrancoli/ecomm' },
+			screenshot: '/static/images/ecomm.webp'
+		}
 	];
 </script>
 
-<h2>Projects</h2>
-{#each projects as project}
-	<Project {project} />
-{/each}
+<section id="projects">
+	<h2>Projects</h2>
+	{#each projects as project}
+		<Project {project} />
+	{/each}
+</section>
 
 <style lang="postcss"></style>
