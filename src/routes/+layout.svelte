@@ -19,6 +19,7 @@
 		font-family: 'Sora Variable', sans-serif;
 		background-color: var(--background-colour);
 		color: var(--text-colour);
+		margin: 0 5vw 0 5vw;
 	}
 
 	.nav {
