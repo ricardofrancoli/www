@@ -1,5 +1,6 @@
 <script lang="ts">
 	import About from './about/+page.svelte';
+	import Projects from './projects/+page.svelte';
 </script>
 
 <div class="outer-container">
@@ -10,6 +11,7 @@
 </div>
 
 <About />
+<Projects />
 
 <style lang="postcss">
 	@import '../styles/variables.css';
