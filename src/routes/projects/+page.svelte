@@ -32,13 +32,6 @@
 				live: 'https://choice-net-git-main-ricardofrancoli.vercel.app/'
 			},
 			screenshot: '/static/images/choice-net.webp'
-		},
-		{
-			title: 'Ecomm Site',
-			description:
-				'A mock-up e-commerce site I used to practice my backend skills. Made using NodeJS, Express and OOP for some repositories made from scratch.',
-			links: { github: 'https://github.com/ricardofrancoli/ecomm' },
-			screenshot: '/static/images/ecomm.webp'
 		}
 	];
 </script>
