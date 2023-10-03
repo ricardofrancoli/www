@@ -37,14 +37,26 @@
 		@media (--md) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			grid-template-rows: auto 1fr auto;
+			grid-template-areas:
+				'title screenshot'
+				'description screenshot'
+				'links screenshot';
+
+			h3 {
+				grid-area: title;
+			}
 
 			.project-screenshot-container {
-				grid-row: 1/4;
+				grid-area: screenshot;
 			}
 
 			p {
+				grid-area: description;
 				min-height: 10rem;
+			}
+
+			.project-links {
+				grid-area: links;
 			}
 		}
 	}
@@ -70,6 +82,13 @@
 	@media (--md) {
 		.project-container {
 			height: 20rem;
+		}
+
+		.project-container:nth-child(even) .project {
+			grid-template-areas:
+				'screenshot title'
+				'screenshot description'
+				'screenshot links';
 		}
 	}
 </style>
