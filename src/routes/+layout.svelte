@@ -20,6 +20,14 @@
 		background-color: var(--background-colour);
 		color: var(--text-colour);
 		margin: 0 5vw 0 5vw;
+
+		@media (--md) {
+			margin: 0 10vw 0 10vw;
+		}
+
+		@media (--md) {
+			margin: 0 20vw 0 20vw;
+		}
 	}
 
 	.nav {
