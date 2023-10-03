@@ -5,39 +5,40 @@
 </script>
 
 <div class="project">
-	<div class="project-details">
-		<h3>{project.title}</h3>
-		<p>{project.description}</p>
+	<h3>{project.title}</h3>
+	<div class="project-screenshot-container">
+		<img class="project-screenshot" src={project.screenshot} alt="" />
+	</div>
+	<p>{project.description}</p>
+	<div class="project-links">
 		{#if project.links.live}
 			<a href={project.links.live}>See live</a>
 		{/if}
 		<a href={project.links.github}>Github</a>
 	</div>
-	<div class="project-screenshot-container">
-		<img class="project-screenshot" src={project.screenshot} alt="" />
-	</div>
 </div>
 
 <style lang="postcss">
+	@import '../styles/variables.css';
+
 	.project {
 		display: flex;
-		gap: 2rem;
-		height: 12.5rem;
-		margin-bottom: 20px;
-	}
+		flex-direction: column;
+		gap: 1rem;
+		margin-bottom: 20px; /* TODO: Change later, do this in Projects instead */
 
-	.project-details {
-		width: 50%;
-
-		& h3 {
+		h3,
+		p {
 			margin: 0;
 		}
 	}
 
 	.project-screenshot-container {
-		width: 50%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
 
-		& .project-screenshot {
+		.project-screenshot {
 			object-fit: contain;
 			max-width: 90%;
 			max-height: 90%;
