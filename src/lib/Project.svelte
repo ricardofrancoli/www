@@ -27,7 +27,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		margin-bottom: 20px; /* TODO: Change later, do this in Projects instead */
 
 		h3,
 		p {
@@ -81,7 +80,7 @@
 
 	@media (--md) {
 		.project-container {
-			height: 20rem;
+			height: 100%;
 		}
 
 		.project-container:nth-child(even) .project {

@@ -38,9 +38,23 @@
 
 <section id="projects">
 	<h2>Projects</h2>
-	{#each projects as project}
-		<Project {project} />
-	{/each}
+	<div class="projects-container">
+		{#each projects as project}
+			<Project {project} />
+		{/each}
+	</div>
 </section>
 
-<style lang="postcss"></style>
+<style lang="postcss">
+	@import '../../styles/variables.css';
+
+	.projects-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		@media (--lg) {
+			gap: 2rem;
+		}
+	}
+</style>
