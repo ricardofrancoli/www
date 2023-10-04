@@ -1,14 +1,21 @@
 <script lang="ts">
+	import Screen from './Screen.svelte';
+
 	import type { Project } from '../types/project';
 
 	export let project: Project;
+
+	let laptopWidth: number = 0;
+	$: height = laptopWidth / 1.6;
 </script>
 
 <div class="project-container">
 	<div class="project">
 		<h3>{project.title}</h3>
-		<div class="project-screenshot-container">
-			<img class="project-screenshot" src={project.screenshot} alt="" />
+		<div class="project-screenshot-container" style={height ? `min-height: ${height}px` : ''}>
+			<div bind:clientWidth={laptopWidth} class="laptop">
+				<Screen width={laptopWidth} imageHref={project.screenshot} />
+			</div>
 		</div>
 		<p>{project.description}</p>
 		<div class="project-links">
@@ -62,19 +69,13 @@
 
 	.project-screenshot-container {
 		width: 100%;
+		background-color: var(--primary-colour);
 		display: flex;
-		justify-content: center;
+		align-items: flex-end;
 
-		.project-screenshot {
-			object-fit: contain;
-			max-width: 90%;
-			max-height: 90%;
-			width: auto;
-			height: auto;
-
-			@media (--md) {
-				margin-top: auto;
-			}
+		.laptop {
+			width: 100%;
+			overflow: hidden;
 		}
 	}
 
