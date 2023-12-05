@@ -30,6 +30,19 @@
 <style lang="postcss">
 	@import '../styles/variables.css';
 
+	.project-screenshot-container {
+		width: 100%;
+		display: flex;
+		background-color: var(--primary-colour);
+		border-radius: 20px;
+
+		.screen {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+
 	.project {
 		display: flex;
 		flex-direction: column;
@@ -64,18 +77,6 @@
 			.project-links {
 				grid-area: links;
 			}
-		}
-	}
-
-	.project-screenshot-container {
-		width: 100%;
-		background-color: var(--primary-colour);
-		display: flex;
-
-		.screen {
-			position: relative;
-			width: 100%;
-			overflow: hidden;
 		}
 	}
 
