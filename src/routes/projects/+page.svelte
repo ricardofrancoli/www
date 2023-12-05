@@ -11,7 +11,10 @@
 				github: 'https://github.com/ricardofrancoli/route-cost-calculator',
 				live: 'https://route-cost-calculator-ricardofrancoli.vercel.app/'
 			},
-			screenshot: '/static/images/route-cost-calculator.webp'
+			screenshotHrefs: {
+				portrait: '/static/images/route-cost-calculator-portrait.webp',
+				landscape: '/static/images/route-cost-calculator-landscape.webp'
+			}
 		},
 		{
 			title: 'World Clock',
@@ -21,7 +24,10 @@
 				github: 'https://github.com/ricardofrancoli/world-clock',
 				live: 'https://world-clock.vercel.app/'
 			},
-			screenshot: '/static/images/world-clock.webp'
+			screenshotHrefs: {
+				portrait: '/static/images/world-clock-portrait.webp',
+				landscape: '/static/images/world-clock-landscape.webp'
+			}
 		},
 		{
 			title: 'Quiz App',
@@ -31,7 +37,10 @@
 				github: 'https://github.com/ricardofrancoli/choice-net',
 				live: 'https://choice-net-git-main-ricardofrancoli.vercel.app/'
 			},
-			screenshot: '/static/images/choice-net.webp'
+			screenshotHrefs: {
+				portrait: '/static/images/choice-net-portrait.webp',
+				landscape: '/static/images/choice-net-landscape.webp'
+			}
 		}
 	];
 </script>

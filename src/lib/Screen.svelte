@@ -1,9 +1,11 @@
 <script lang="ts">
+	import type { ScreenshotHrefs } from '../types/project';
+
 	export let width = 700;
-	export let imageHref: string;
+	export let screenshotHrefs: ScreenshotHrefs;
 </script>
 
-<div class="container">
+<div class="mobile-mockup-container">
 	<div class="mobile-mockup screenshot">
 		<svg version="1.1" id="svg2" viewBox="0 0 700 1400" xmlns="http://www.w3.org/2000/svg">
 			<defs>
@@ -27,7 +29,13 @@
 					d="M 4766.2837,3452.3882 H 4276.212 c -37.5458,0 -67.9833,-30.1975 -67.9833,-67.4502 V 2160.9193 c 0,-37.2527 30.4375,-67.4502 67.9833,-67.4502 h 490.0717 c 37.5458,0 67.9808,30.1975 67.9808,67.4502 V 3384.938 c 0,37.2527 -30.435,67.4502 -67.9808,67.4502"
 					style="display:inline;fill:#FFF;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0654625"
 				/>
-				<image href={imageHref} x="4171.2612" y="2200" width="700" clip-path="url(#clipPath)" />
+				<image
+					href={screenshotHrefs.portrait}
+					x="4171.2612"
+					y="2050"
+					width="700"
+					clip-path="url(#clipPath)"
+				/>
 			</g>
 		</svg>
 	</div>
@@ -41,7 +49,13 @@
 			d="M383.228 60C383.228 26.8629 410.091 0 443.228 0H3516.77C3549.9 0 3576.77 26.8629 3576.77 60V2138.5H383.228V60Z"
 			fill="black"
 		/>
-		<image href={imageHref} x="439.998" y="75.6983" width="3070.54" height="1949.25" />
+		<image
+			href={screenshotHrefs.landscape}
+			x="439.998"
+			y="75.6983"
+			width="3070.54"
+			height="1949.25"
+		/>
 		<path
 			d="M310.634 2261.5C192.072 2261.5 61.6526 2241.82 0 2200H1982.37V2261.5C1468.6 2259.04 422.083 2261.5 310.634 2261.5Z"
 			fill="#A2A2A2"
@@ -55,7 +69,8 @@
 
 <style lang="postcss">
 	@import '../styles/variables.css';
-	.container {
+
+	.mobile-mockup-container {
 		overflow: hidden;
 		width: 100%;
 		height: 100%;
@@ -75,6 +90,7 @@
 			}
 		}
 	}
+
 	.laptop-mockup.screenshot {
 		display: none;
 	}
@@ -88,13 +104,16 @@
 	}
 
 	@media (--lg) {
-		.mobile-mockup.screenshot {
+		.mobile-mockup-container {
 			display: none;
 		}
 
 		.laptop-mockup.screenshot {
+			position: absolute;
+			top: 25px;
 			display: flex;
 			align-items: flex-end;
+			height: 100%;
 
 			svg {
 				width: 100%;

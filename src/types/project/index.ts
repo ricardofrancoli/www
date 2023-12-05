@@ -3,9 +3,14 @@ type Links = {
 	github: string;
 };
 
+export type ScreenshotHrefs = {
+	portrait: string;
+	landscape: string;
+};
+
 export type Project = {
 	title: string;
 	description: string;
 	links: Links;
-	screenshot: string;
+	screenshotHrefs: ScreenshotHrefs;
 };

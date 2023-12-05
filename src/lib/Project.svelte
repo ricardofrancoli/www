@@ -13,8 +13,8 @@
 	<div class="project">
 		<h3>{project.title}</h3>
 		<div class="project-screenshot-container" style={height ? `min-height: ${height}px` : ''}>
-			<div bind:clientWidth={laptopWidth} class="laptop">
-				<Screen width={laptopWidth} imageHref={project.screenshot} />
+			<div bind:clientWidth={laptopWidth} class="screen">
+				<Screen width={laptopWidth} screenshotHrefs={project.screenshotHrefs} />
 			</div>
 		</div>
 		<p>{project.description}</p>
@@ -72,7 +72,7 @@
 		background-color: var(--primary-colour);
 		display: flex;
 
-		.laptop {
+		.screen {
 			position: relative;
 			width: 100%;
 			overflow: hidden;
