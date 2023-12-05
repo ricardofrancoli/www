@@ -80,7 +80,7 @@
 			bottom: -50px;
 			left: 50%;
 			transform: translate(-50%, 0);
-			width: 70%;
+			width: 60%;
 			margin: auto;
 			display: flex;
 			justify-content: center;
@@ -96,9 +96,13 @@
 	}
 
 	@media (--md) {
-		.mobile-mockup.screenshot {
-			svg {
-				width: 100%;
+		.mobile-mockup-container {
+			.mobile-mockup.screenshot {
+				width: 48%;
+
+				svg {
+					width: 100%;
+				}
 			}
 		}
 	}
