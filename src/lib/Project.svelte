@@ -6,7 +6,7 @@
 	export let project: Project;
 
 	let laptopWidth: number = 0;
-	$: height = laptopWidth / 1.6;
+	$: height = laptopWidth / 2.25;
 </script>
 
 <div class="project-container">
@@ -71,9 +71,9 @@
 		width: 100%;
 		background-color: var(--primary-colour);
 		display: flex;
-		align-items: flex-end;
 
 		.laptop {
+			position: relative;
 			width: 100%;
 			overflow: hidden;
 		}
