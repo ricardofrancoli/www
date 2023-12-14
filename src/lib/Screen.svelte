@@ -80,13 +80,13 @@
 			bottom: -50px;
 			left: 50%;
 			transform: translate(-50%, 0);
-			width: 60%;
+			width: 5.5em;
 			margin: auto;
 			display: flex;
 			justify-content: center;
 
 			svg {
-				width: 40%;
+				width: 100%;
 			}
 		}
 	}
@@ -95,14 +95,18 @@
 		display: none;
 	}
 
+	@media (--xs) {
+		.mobile-mockup-container {
+			.mobile-mockup.screenshot {
+				width: 7em;
+			}
+		}
+	}
+
 	@media (--md) {
 		.mobile-mockup-container {
 			.mobile-mockup.screenshot {
-				width: 48%;
-
-				svg {
-					width: 100%;
-				}
+				width: 9.5em;
 			}
 		}
 	}
@@ -114,14 +118,28 @@
 
 		.laptop-mockup.screenshot {
 			position: absolute;
-			top: 25px;
+			bottom: -25px;
 			display: flex;
+			left: 50%;
+			transform: translate(-50%, 0);
 			align-items: flex-end;
-			height: 100%;
+			width: 20em;
 
 			svg {
 				width: 100%;
 			}
+		}
+	}
+
+	@media (--xl) {
+		.laptop-mockup.screenshot {
+			width: 22.5em;
+		}
+	}
+
+	@media (--2xl) {
+		.laptop-mockup.screenshot {
+			width: 25em;
 		}
 	}
 </style>

@@ -60,12 +60,15 @@
 		}
 
 		@media (--md) {
+			min-height: 340px;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-areas:
 				'title screenshot'
 				'description screenshot'
 				'links screenshot';
+			grid-template-rows: min-content auto min-content;
+			column-gap: 4rem;
 
 			h3 {
 				grid-area: title;
@@ -83,6 +86,10 @@
 			.project-links {
 				grid-area: links;
 			}
+		}
+
+		@media (--lg) {
+			min-height: 250px;
 		}
 	}
 
