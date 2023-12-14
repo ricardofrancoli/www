@@ -10,8 +10,10 @@
 	</div>
 </div>
 
-<About />
-<Projects />
+<main class="main-content">
+	<About />
+	<Projects />
+</main>
 
 <style lang="postcss">
 	@import '../styles/variables.css';
@@ -37,6 +39,12 @@
 		.web-dev-role {
 			color: var(--primary-colour);
 		}
+	}
+
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		gap: 7.5rem;
 	}
 
 	@media (--md) {
