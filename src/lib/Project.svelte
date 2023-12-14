@@ -5,16 +5,22 @@
 
 	export let project: Project;
 
-	let laptopWidth: number = 0;
-	$: height = laptopWidth / 2.25;
+	let borderBoxSize: ResizeObserverEntry['borderBoxSize'];
+	let screenshotWidth: number = 0;
+
+	$: screenshotWidth = borderBoxSize && borderBoxSize[borderBoxSize.length - 1]?.inlineSize;
+	$: minScreenshotHeight = screenshotWidth / 2.25;
 </script>
 
 <div class="project-container">
 	<div id={project.id} class="project">
 		<h3>{project.title}</h3>
-		<div class="project-screenshot-container" style={height ? `min-height: ${height}px` : ''}>
-			<div bind:clientWidth={laptopWidth} class="screen">
-				<Screen width={laptopWidth} screenshotHrefs={project.screenshotHrefs} />
+		<div
+			class="project-screenshot-container"
+			style={minScreenshotHeight ? `min-height: ${minScreenshotHeight}px` : ''}
+		>
+			<div bind:borderBoxSize class="screen">
+				<Screen width={screenshotWidth} screenshotHrefs={project.screenshotHrefs} />
 			</div>
 		</div>
 		<p>{project.description}</p>
@@ -30,19 +36,6 @@
 <style lang="postcss">
 	@import '../styles/variables.css';
 
-	.project-screenshot-container {
-		width: 100%;
-		display: flex;
-		background-color: var(--primary-colour);
-		border-radius: 20px;
-
-		.screen {
-			position: relative;
-			width: 100%;
-			overflow: hidden;
-		}
-	}
-
 	.project {
 		display: flex;
 		flex-direction: column;
@@ -51,6 +44,19 @@
 		h3,
 		p {
 			margin: 0;
+		}
+
+		.project-screenshot-container {
+			width: 100%;
+			display: flex;
+			background-color: var(--primary-colour);
+			border-radius: 20px;
+
+			.screen {
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+			}
 		}
 
 		@media (--md) {
