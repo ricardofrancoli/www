@@ -10,7 +10,7 @@
 </script>
 
 <div class="project-container">
-	<div class="project">
+	<div id={project.id} class="project">
 		<h3>{project.title}</h3>
 		<div class="project-screenshot-container" style={height ? `min-height: ${height}px` : ''}>
 			<div bind:clientWidth={laptopWidth} class="screen">
