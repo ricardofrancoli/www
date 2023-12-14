@@ -25,7 +25,7 @@
 			margin: 0 10vw 0 10vw;
 		}
 
-		@media (--md) {
+		@media (--lg) {
 			margin: 0 20vw 0 20vw;
 		}
 	}
