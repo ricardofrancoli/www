@@ -63,10 +63,10 @@
 	.projects-container {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 4rem;
 
 		@media (--lg) {
-			gap: 2rem;
+			gap: 5rem;
 		}
 	}
 </style>
