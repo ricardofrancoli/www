@@ -1,3 +1,13 @@
+<script lang="ts">
+	import Stack from '$lib/Stack.svelte';
+	import { getLibAssetPaths } from '../../utils';
+
+	const svgAssetSrcs = getLibAssetPaths()
+		.map((value) => ({ value, sort: Math.random() }))
+		.sort((a, b) => a.sort - b.sort)
+		.map(({ value }) => value);
+</script>
+
 <section id="about">
 	<h2>About</h2>
 	<div class="text-container">
@@ -13,14 +23,11 @@
 		</p>
 	</div>
 	<h3>Stack</h3>
-	<ul>
-		<li>Typescript</li>
-		<li>Node.js</li>
-		<li>React</li>
-		<li>Vue.js</li>
-		<!-- TODO: add more -->
-		<!-- NOTE: idea: make it so they're small icons you can move around -->
-	</ul>
+	<div class="stacks">
+		{#each svgAssetSrcs as svgSrc}
+			<Stack {svgSrc} />
+		{/each}
+	</div>
 </section>
 
 <style lang="postcss">
@@ -28,6 +35,12 @@
 
 	#about {
 		background-color: var(--background-colour); /* TODO: make lighter */
+	}
+
+	.stacks {
+		display: flex;
+		gap: 2rem;
+		flex-wrap: wrap;
 	}
 
 	@media (--md) {
