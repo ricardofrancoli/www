@@ -17,7 +17,7 @@
 </script>
 
 <a class="button" {href} bind:this={button} on:click={createRipple}>
-	{text}
+	<p>{text}</p>
 	<span bind:this={rippleSpan} />
 </a>
 
@@ -27,8 +27,10 @@
 	.button {
 		position: relative;
 		overflow: hidden;
+		display: flex;
+		align-items: center;
 		min-width: 160px;
-		padding: 16px 14px 18px;
+		height: 50px;
 		cursor: pointer;
 		border-radius: 150px;
 		color: var(--primary-colour);
@@ -40,6 +42,11 @@
 		text-align: center;
 		transition-property: background-color, color;
 		transition-duration: 0.3s;
+	}
+
+	p {
+		margin: 0;
+		width: 100%;
 	}
 
 	span {
