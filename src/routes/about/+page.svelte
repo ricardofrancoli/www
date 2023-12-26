@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Stack from '$lib/Stack.svelte';
-	import { getLibAssetPaths } from '../../utils';
+	import { getStackAssetPaths } from '../../utils';
 
-	const svgAssetSrcs = getLibAssetPaths()
+	const svgAssetSrcs = getStackAssetPaths()
 		.map((value) => ({ value, sort: Math.random() }))
 		.sort((a, b) => a.sort - b.sort)
 		.map(({ value }) => value);

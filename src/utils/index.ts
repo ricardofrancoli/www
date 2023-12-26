@@ -1,5 +1,7 @@
-export const getLibAssetPaths = () => {
-	const imageModules = import.meta.glob('$lib/assets/*.svg', { as: 'raw' });
+export const getStackAssetPaths = () => {
+	const imageModules = import.meta.glob('$lib/assets/stacks/*.svg', {
+		as: 'raw'
+	});
 
 	const modulePaths: string[] = [];
 
