@@ -1,11 +1,15 @@
 <script lang="ts">
-	import github from '$lib/assets/socials/github.svg';
-	import instagram from '$lib/assets/socials/instagram.svg';
-	import linkedin from '$lib/assets/socials/linkedin.svg';
+	import Github from '$lib/assets/socials/github.svg';
+	import Instagram from '$lib/assets/socials/instagram.svg';
+	import Linkedin from '$lib/assets/socials/linkedin.svg';
 	import Button from '$lib/Button.svelte';
 	import Icon from '$lib/Icon.svelte';
 
-	const socialIcons = [github, instagram, linkedin] as const;
+	const socialIcons = [
+		{ href: 'https://github.com/ricardofrancoli', svg: Github },
+		{ href: 'https://www.instagram.com/ricardofrancoli/', svg: Instagram },
+		{ href: 'https://www.linkedin.com/in/ricardofrancoli/', svg: Linkedin }
+	] as const;
 </script>
 
 <section id="contact">
@@ -13,13 +17,13 @@
 
 	<div class="contact-container">
 		<h3>Ready for a chat?</h3>
-		<Button text="Get in touch" />
+		<Button text="Get in touch" href="mailto:francoli@gmail.com" />
 
 		<div class="social-icons">
 			{#each socialIcons as socialIcon}
-				<div class="social-icon">
-					<Icon src={socialIcon} renderRaw={false} viewBox={24} useBackgroundColour={false} />
-				</div>
+				<a class="social-icon" href={socialIcon.href} target="_blank">
+					<Icon src={socialIcon.svg} renderRaw={false} viewBox={24} useBackgroundColour={false} />
+				</a>
 			{/each}
 		</div>
 	</div>
