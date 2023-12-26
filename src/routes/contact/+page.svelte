@@ -11,19 +11,35 @@
 <section id="contact">
 	<h2>Contact</h2>
 
-	<h3>Ready for a chat?</h3>
-	<Button text="Get in touch" />
+	<div class="contact-container">
+		<h3>Ready for a chat?</h3>
+		<Button text="Get in touch" />
 
-	<div class="social-icons">
-		{#each socialIcons as socialIcon}
-			<div class="social-icon">
-				<Icon src={socialIcon} renderRaw={false} viewBox={24} useBackgroundColour={false} />
-			</div>
-		{/each}
+		<div class="social-icons">
+			{#each socialIcons as socialIcon}
+				<div class="social-icon">
+					<Icon src={socialIcon} renderRaw={false} viewBox={24} useBackgroundColour={false} />
+				</div>
+			{/each}
+		</div>
 	</div>
 </section>
 
 <style lang="postcss">
+	.contact-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+		max-width: 50%;
+		margin: auto;
+
+		h3 {
+			width: fit-content;
+			margin: 0;
+		}
+	}
+
 	.social-icons {
 		display: flex;
 		justify-content: center;
