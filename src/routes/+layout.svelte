@@ -15,8 +15,12 @@
 <style lang="postcss">
 	@import '../styles/variables.css';
 
-	:root {
+	:root,
+	:global(input, textarea, button) {
 		font-family: 'Sora Variable', sans-serif;
+	}
+
+	:root {
 		background-color: var(--background-colour);
 		color: var(--text-colour);
 		margin: 0 5vw 0 5vw;

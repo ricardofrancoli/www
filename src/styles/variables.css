@@ -27,6 +27,8 @@
 @custom-media --xl (min-width: 1280px);
 @custom-media --2xl (min-width: 1536px);
 
+@custom-media --mobile-only (max-width: 1024px);
+
 /* Misc */
 :root {
 	--border-radius: 20px;
