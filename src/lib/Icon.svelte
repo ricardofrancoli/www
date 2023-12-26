@@ -10,8 +10,10 @@
 
 {#if isSvg && svgRoute}
 	{#await import(svgRoute)}
-		<!-- TODO: add spinner -->
-		<div>loading...</div>
+		<span
+			class="loader"
+			style="background: {useBackgroundColour ? 'var(--background-colour)' : 'var(--text-colour)'}"
+		/>
 	{:then value}
 		{#if renderRaw}
 			{@html value.default}
@@ -25,3 +27,28 @@
 		{/if}
 	{/await}
 {/if}
+
+<style lang="postcss">
+	@import '../styles/variables.css';
+
+	.loader {
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		display: inline-block;
+		border-radius: 50%;
+		box-sizing: border-box;
+		animation: animloader 1s ease-in infinite;
+	}
+
+	@keyframes animloader {
+		0% {
+			transform: scale(0);
+			opacity: 1;
+		}
+		100% {
+			transform: scale(1);
+			opacity: 0;
+		}
+	}
+</style>
