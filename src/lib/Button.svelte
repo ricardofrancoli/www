@@ -1,7 +1,8 @@
 <script lang="ts">
 	export let text: string;
+	export let href: string | null = null;
 
-	let button: HTMLButtonElement;
+	let button: HTMLAnchorElement;
 	let rippleSpan: HTMLSpanElement;
 
 	function createRipple(event: MouseEvent) {
@@ -15,35 +16,34 @@
 	}
 </script>
 
-<button bind:this={button} on:click={createRipple}>
+<a class="button" {href} bind:this={button} on:click={createRipple}>
 	{text}
 	<span bind:this={rippleSpan} />
-</button>
+</a>
 
 <style lang="postcss">
 	@import '../styles/variables.css';
 
-	button {
+	.button {
 		position: relative;
 		overflow: hidden;
-		display: inline-block;
-		outline: none;
-		cursor: pointer;
-		line-height: 1;
-		border-radius: 150px;
-		transition-property: background-color, border-color, color, box-shadow, filter;
-		transition-duration: 0.3s;
-		border: 1px solid transparent;
-		letter-spacing: 1px;
 		min-width: 160px;
-		white-space: normal;
-		font-weight: 600;
-		text-align: center;
 		padding: 16px 14px 18px;
+		cursor: pointer;
+		border-radius: 150px;
 		color: var(--primary-colour);
 		box-shadow: inset 0 0 0 2px var(--primary-colour);
-		background-color: transparent;
-		height: 48px;
+		font-size: 0.75rem;
+		letter-spacing: 1px;
+		text-decoration: none;
+		font-weight: 700;
+		text-align: center;
+		transition-property: background-color, color;
+		transition-duration: 0.3s;
+	}
+
+	span {
+		display: none;
 	}
 
 	@media (--mobile-only) {
@@ -73,8 +73,8 @@
 		}
 	}
 
-	@media (--md) {
-		button {
+	@media not (--mobile-only) {
+		.button {
 			&:hover {
 				color: var(--background-colour);
 				background-color: var(--primary-colour);
