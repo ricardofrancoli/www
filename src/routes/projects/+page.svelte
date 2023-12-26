@@ -13,8 +13,8 @@
 				live: 'https://route-cost-calculator-ricardofrancoli.vercel.app/'
 			},
 			screenshotHrefs: {
-				portrait: '/static/images/route-cost-calculator-portrait.webp',
-				landscape: '/static/images/route-cost-calculator-landscape.webp'
+				portrait: '/images/route-cost-calculator-portrait.webp',
+				landscape: '/images/route-cost-calculator-landscape.webp'
 			}
 		},
 		{
@@ -27,8 +27,8 @@
 				live: 'https://world-clock.vercel.app/'
 			},
 			screenshotHrefs: {
-				portrait: '/static/images/world-clock-portrait.webp',
-				landscape: '/static/images/world-clock-landscape.webp'
+				portrait: '/images/world-clock-portrait.webp',
+				landscape: '/images/world-clock-landscape.webp'
 			}
 		},
 		{
@@ -41,8 +41,8 @@
 				live: 'https://choice-net-git-main-ricardofrancoli.vercel.app/'
 			},
 			screenshotHrefs: {
-				portrait: '/static/images/choice-net-portrait.webp',
-				landscape: '/static/images/choice-net-landscape.webp'
+				portrait: '/images/choice-net-portrait.webp',
+				landscape: '/images/choice-net-landscape.webp'
 			}
 		}
 	];
