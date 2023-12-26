@@ -19,6 +19,7 @@
 }
 
 /* Responsive layout widths */
+@custom-media --2xs (min-width: 300px);
 @custom-media --xs (min-width: 480px);
 @custom-media --sm (min-width: 640px);
 @custom-media --md (min-width: 768px);

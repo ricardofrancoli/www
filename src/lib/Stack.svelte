@@ -28,7 +28,7 @@
 	@import '../styles/variables.css';
 
 	.stack {
-		width: 7rem;
+		width: 5rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -38,7 +38,7 @@
 
 	.stack-icon-container {
 		width: 100%;
-		height: 7rem;
+		height: 5rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -53,5 +53,15 @@
 
 	.stack-name {
 		margin: auto;
+	}
+
+	@media (--md) {
+		.stack {
+			width: 6.5rem;
+		}
+
+		.stack-icon-container {
+			height: 6.5rem;
+		}
 	}
 </style>

@@ -38,15 +38,38 @@
 	}
 
 	.stacks {
-		display: flex;
-		gap: 2rem;
-		flex-wrap: wrap;
+		display: grid;
+		gap: 0.75rem;
+		justify-content: space-between;
+		/* grid-template-columns: repeat(auto-fit, 25%); */
+		grid-template-columns: repeat(2, min-content);
+		/* grid-template-columns: repeat(2, minmax(5rem, 1fr)); */
+	}
+
+	@media (--2xs) {
+		.stacks {
+			gap: 1rem;
+			grid-template-columns: repeat(3, min-content);
+		}
+	}
+
+	@media (--xs) {
+		.stacks {
+			gap: 1.5rem;
+			grid-template-columns: repeat(4, min-content);
+		}
 	}
 
 	@media (--md) {
 		.text-container {
 			display: flex;
 			gap: 3rem;
+		}
+	}
+
+	@media (--xl) {
+		.stacks {
+			grid-template-columns: repeat(6, min-content);
 		}
 	}
 </style>
