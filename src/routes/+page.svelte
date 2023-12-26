@@ -1,4 +1,7 @@
 <script lang="ts">
+	import heart from '$lib/assets/heart.svg';
+	import Icon from '$lib/Icon.svelte';
+
 	import About from './about/+page.svelte';
 	import Contact from './contact/+page.svelte';
 	import Projects from './projects/+page.svelte';
@@ -16,6 +19,14 @@
 	<Projects />
 	<Contact />
 </main>
+
+<footer>
+	<span>Made with</span>
+	<div class="love">
+		<Icon src={heart} viewBox={24} useBackgroundColour={false} />
+	</div>
+	<span>by Ricardo</span>
+</footer>
 
 <style lang="postcss">
 	@import '../styles/variables.css';
@@ -47,6 +58,20 @@
 		display: flex;
 		flex-direction: column;
 		gap: 7.5rem;
+	}
+
+	footer {
+		display: flex;
+		justify-content: center;
+		gap: 0.25rem;
+		margin-top: 5rem;
+		font-size: 0.75rem;
+		color: var(--primary-colour);
+
+		.love {
+			width: 0.75rem;
+			color: var(--tertiary-colour);
+		}
 	}
 
 	@media (--md) {
