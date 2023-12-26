@@ -1,5 +1,6 @@
 <script lang="ts">
 	import About from './about/+page.svelte';
+	import Contact from './contact/+page.svelte';
 	import Projects from './projects/+page.svelte';
 </script>
 
@@ -13,6 +14,7 @@
 <main class="main-content">
 	<About />
 	<Projects />
+	<Contact />
 </main>
 
 <style lang="postcss">
