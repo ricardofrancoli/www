@@ -45,6 +45,8 @@
 		text-decoration: none;
 		font-weight: 700;
 		text-align: center;
+		color: var(--primary-colour);
+		box-shadow: inset 0 0 0 2px var(--primary-colour);
 		transition-property: background-color, color;
 		transition-duration: 0.3s;
 	}

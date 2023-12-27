@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Button from './Button.svelte';
 	import Screen from './Screen.svelte';
 
 	import type { Project } from '../types/project';
@@ -26,9 +27,9 @@
 		<p>{project.description}</p>
 		<div class="project-links">
 			{#if project.links.live}
-				<a href={project.links.live}>See live</a>
+				<Button text="See live" href={project.links.github} openInNewTab={true} />
 			{/if}
-			<a href={project.links.github}>Github</a>
+			<Button text="Github" href={project.links.github} openInNewTab={true} />
 		</div>
 	</div>
 </div>
@@ -85,6 +86,8 @@
 
 			.project-links {
 				grid-area: links;
+				display: flex;
+				gap: 1rem;
 			}
 		}
 
