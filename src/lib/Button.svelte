@@ -33,8 +33,6 @@
 		height: 50px;
 		cursor: pointer;
 		border-radius: 150px;
-		color: var(--primary-colour);
-		box-shadow: inset 0 0 0 2px var(--primary-colour);
 		font-size: 0.75rem;
 		letter-spacing: 1px;
 		text-decoration: none;
