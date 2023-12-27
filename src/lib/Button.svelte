@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let text: string;
 	export let href: string | null = null;
+	export let openInNewTab: boolean = false;
 
 	let button: HTMLAnchorElement;
 	let rippleSpan: HTMLSpanElement;
@@ -16,7 +17,13 @@
 	}
 </script>
 
-<a class="button" {href} bind:this={button} on:click={createRipple}>
+<a
+	class="button"
+	{href}
+	bind:this={button}
+	on:click={createRipple}
+	target={openInNewTab ? '_blank' : '_self'}
+>
 	<p>{text}</p>
 	<span bind:this={rippleSpan} />
 </a>
