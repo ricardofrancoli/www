@@ -119,4 +119,10 @@
 			transform 0.13s 0.22s var(--cubic-bezier-quick);
 		transform: translate3d(0, 10px, 0) rotate(-45deg);
 	}
+
+	@media not (--mobile-only) {
+		.hamburger-container {
+			display: none;
+		}
+	}
 </style>

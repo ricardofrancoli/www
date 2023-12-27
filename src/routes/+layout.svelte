@@ -1,13 +1,10 @@
-<script>
+<script lang="ts">
 	import '@fontsource-variable/sora';
 
 	import Hamburger from '$lib/Hamburger.svelte';
 	import ThemeToggle from '$lib/ThemeToggle/ThemeToggle.svelte';
 
 	let isHamburgerActive = false;
-
-	$: visibility = isHamburgerActive ? 'visible' : 'hidden';
-	$: opacity = isHamburgerActive ? 1 : 0;
 </script>
 
 <nav class="nav">
@@ -15,10 +12,15 @@
 		<ThemeToggle />
 	</div>
 	<Hamburger bind:isActive={isHamburgerActive} />
-	<div class="nav-links" style:opacity style:visibility>
+	<div class="nav-links nav-links-mobile" class:visible={isHamburgerActive}>
 		<a href="#about" on:click={() => (isHamburgerActive = false)}>about</a>
 		<a href="#projects" on:click={() => (isHamburgerActive = false)}>projects</a>
 		<a href="#contact" on:click={() => (isHamburgerActive = false)}>contact</a>
+	</div>
+	<div class="nav-links nav-links-desktop" class:visible={isHamburgerActive}>
+		<a href="#about">about</a>
+		<a href="#projects">projects</a>
+		<a href="#contact">contact</a>
 	</div>
 </nav>
 <div class="content" class:blurred={isHamburgerActive}>
@@ -56,23 +58,57 @@
 		z-index: 1000;
 
 		.nav-links {
-			position: fixed;
-			right: 50%;
-			transform: translate(50%, 50%);
 			display: flex;
-			flex-direction: column;
-			align-items: flex-end;
 			gap: 3rem;
-			transition-property: display;
-			transition: opacity 0.15s var(--cubic-bezier-ease-in-quicker),
-				visibility 0.15s 0s var(--cubic-bezier-ease-in-quicker);
+		}
+
+		@media (--mobile-only) {
+			.nav-links-desktop {
+				display: none;
+			}
+
+			.nav-links-mobile {
+				position: fixed;
+				right: 50%;
+				transform: translate(50%, 50%);
+				flex-direction: column;
+				align-items: flex-end;
+				visibility: none;
+				opacity: 0;
+				font-size: 3rem;
+				transition-property: display;
+				transition: opacity 0.15s var(--cubic-bezier-ease-in-quicker),
+					visibility 0.15s 0s var(--cubic-bezier-ease-in-quicker);
+
+				&.visible {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+
+		@media not (--mobile-only) {
+			align-items: center;
+
+			.nav-links-mobile {
+				display: none;
+			}
+
+			.nav-links-desktop {
+				margin: 0 auto;
+			}
+
+			.theme-toggle {
+				position: absolute;
+				order: 1;
+				right: 0;
+			}
 		}
 
 		& a {
 			color: inherit;
 			text-decoration: inherit;
 			text-transform: uppercase;
-			font-size: 3rem;
 		}
 	}
 
@@ -83,13 +119,6 @@
 
 		&.blurred {
 			filter: blur(30px);
-		}
-	}
-
-	@media (--md) {
-		.nav {
-			justify-content: center;
-			gap: 3rem;
 		}
 	}
 </style>
