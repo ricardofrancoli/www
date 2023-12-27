@@ -18,6 +18,16 @@
 	--tertiary-colour: #f05782;
 }
 
+:root {
+	/* Cubic Beziers */
+	--cubic-bezier-ease-out: cubic-bezier(0.33333, 0.66667, 0.66667, 1);
+	--cubic-bezier-ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	--cubic-bezier-ease-in-quicker: cubic-bezier(0.33333, 0, 0.66667, 0.33333);
+	--cubic-bezier-quick: cubic-bezier(0.215, 0.61, 0.355, 1);
+	/* Misc */
+	--border-radius: 20px;
+}
+
 /* Responsive layout widths */
 @custom-media --2xs (min-width: 300px);
 @custom-media --xs (min-width: 480px);
@@ -28,8 +38,3 @@
 @custom-media --2xl (min-width: 1536px);
 
 @custom-media --mobile-only (max-width: 1024px);
-
-/* Misc */
-:root {
-	--border-radius: 20px;
-}

@@ -5,13 +5,17 @@
 	import ThemeToggle from '$lib/ThemeToggle/ThemeToggle.svelte';
 
 	let isHamburgerActive = false;
-	$: display = isHamburgerActive ? 'flex' : 'none';
+
+	$: visibility = isHamburgerActive ? 'visible' : 'hidden';
+	$: opacity = isHamburgerActive ? 1 : 0;
 </script>
 
 <nav class="nav">
-	<ThemeToggle />
+	<div class="theme-toggle" class:blurred={isHamburgerActive}>
+		<ThemeToggle />
+	</div>
 	<Hamburger bind:isActive={isHamburgerActive} />
-	<div class="nav-links" style:display>
+	<div class="nav-links" style:opacity style:visibility>
 		<a href="#about" on:click={() => (isHamburgerActive = false)}>about</a>
 		<a href="#projects" on:click={() => (isHamburgerActive = false)}>projects</a>
 		<a href="#contact" on:click={() => (isHamburgerActive = false)}>contact</a>
@@ -53,11 +57,15 @@
 
 		.nav-links {
 			position: fixed;
-
 			right: 50%;
 			transform: translate(50%, 50%);
+			display: flex;
 			flex-direction: column;
+			align-items: flex-end;
 			gap: 3rem;
+			transition-property: display;
+			transition: opacity 0.15s var(--cubic-bezier-ease-in-quicker),
+				visibility 0.15s 0s var(--cubic-bezier-ease-in-quicker);
 		}
 
 		& a {
@@ -68,8 +76,14 @@
 		}
 	}
 
-	.blurred {
-		filter: blur(10px);
+	.content,
+	.theme-toggle {
+		transition-property: filter;
+		transition: filter 0.15s var(--cubic-bezier-ease-in);
+
+		&.blurred {
+			filter: blur(30px);
+		}
 	}
 
 	@media (--md) {
