@@ -120,5 +120,11 @@
 		&.blurred {
 			filter: blur(30px);
 		}
+
+		@media not (--mobile-only) {
+			&.blurred {
+				filter: initial;
+			}
+		}
 	}
 </style>
