@@ -50,7 +50,6 @@
 		position: relative;
 		overflow: hidden;
 		display: flex;
-		min-width: 160px;
 		height: 50px;
 		cursor: pointer;
 		font-size: 0.75rem;
@@ -66,6 +65,7 @@
 		}
 
 		&.primary {
+			min-width: 160px;
 			align-items: center;
 			border-radius: 150px;
 			box-shadow: inset 0 0 0 2px var(--primary-colour);
@@ -77,6 +77,7 @@
 		}
 
 		&.secondary {
+			min-width: 100px;
 			overflow: visible;
 			align-items: flex-end;
 			justify-content: left;

@@ -60,6 +60,11 @@
 			}
 		}
 
+		.project-links {
+			display: flex;
+			gap: 1rem;
+		}
+
 		@media (--md) {
 			min-height: 340px;
 			display: grid;
