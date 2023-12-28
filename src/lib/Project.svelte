@@ -27,9 +27,9 @@
 		<p>{project.description}</p>
 		<div class="project-links">
 			{#if project.links.live}
-				<Button text="See live" href={project.links.github} openInNewTab={true} />
+				<Button text="See live" href={project.links.github} openInNewTab={true} isPrimary={false} />
 			{/if}
-			<Button text="Github" href={project.links.github} openInNewTab={true} />
+			<Button text="Github" href={project.links.github} openInNewTab={true} isPrimary={false} />
 		</div>
 	</div>
 </div>
