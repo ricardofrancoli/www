@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '@fontsource-variable/sora';
-
+	import { clickOutside } from '../utils/clickOutside';
 	import Hamburger from '$lib/Hamburger.svelte';
 	import ThemeToggle from '$lib/ThemeToggle/ThemeToggle.svelte';
 
@@ -12,7 +12,12 @@
 		<ThemeToggle />
 	</div>
 	<Hamburger bind:isActive={isHamburgerActive} />
-	<div class="nav-links nav-links-mobile" class:visible={isHamburgerActive}>
+	<div
+		class="nav-links nav-links-mobile"
+		class:visible={isHamburgerActive}
+		use:clickOutside
+		on:clickOutsideDispatch={() => isHamburgerActive && (isHamburgerActive = false)}
+	>
 		<a href="#about" on:click={() => (isHamburgerActive = false)}>about</a>
 		<a href="#projects" on:click={() => (isHamburgerActive = false)}>projects</a>
 		<a href="#contact" on:click={() => (isHamburgerActive = false)}>contact</a>
