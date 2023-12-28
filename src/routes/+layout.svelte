@@ -78,6 +78,10 @@
 		}
 	}
 
+	:global(body) {
+		margin: 0;
+	}
+
 	.nav {
 		position: relative;
 		display: flex;
@@ -140,16 +144,17 @@
 		}
 	}
 
-	.content,
-	.theme-toggle {
+	.theme-toggle,
+	.content {
 		transition-property: filter;
 		transition: filter 0.15s var(--cubic-bezier-ease-in);
 
 		&.blurred {
+			width: 90vw;
+			margin-top: var(--nav-height);
 			filter: blur(30px);
 			left: 50%;
 			right: 50%;
-			width: 85vw;
 			transform: translate(-50%);
 			user-select: none;
 			pointer-events: none;
