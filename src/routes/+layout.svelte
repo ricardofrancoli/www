@@ -4,23 +4,32 @@
 	import Hamburger from '$lib/Hamburger.svelte';
 	import ThemeToggle from '$lib/ThemeToggle/ThemeToggle.svelte';
 
-	let isHamburgerActive = false;
+	let isHamburgerActive = true;
+
+	const toggleHamburger = (from: 'hamburger' | 'clickOutside') => {
+		if (from === 'clickOutside' && !isHamburgerActive) {
+			return;
+		}
+
+		isHamburgerActive = !isHamburgerActive;
+	};
 </script>
 
 <nav class="nav">
 	<div class="theme-toggle" class:blurred={isHamburgerActive}>
 		<ThemeToggle />
 	</div>
-	<Hamburger bind:isActive={isHamburgerActive} />
 	<div
-		class="nav-links nav-links-mobile"
-		class:visible={isHamburgerActive}
+		class="mobile-nav"
 		use:clickOutside
-		on:clickOutsideDispatch={() => isHamburgerActive && (isHamburgerActive = false)}
+		on:clickOutsideDispatch={() => toggleHamburger('clickOutside')}
 	>
-		<a href="#about" on:click={() => (isHamburgerActive = false)}>about</a>
-		<a href="#projects" on:click={() => (isHamburgerActive = false)}>projects</a>
-		<a href="#contact" on:click={() => (isHamburgerActive = false)}>contact</a>
+		<Hamburger isActive={isHamburgerActive} on:click={() => toggleHamburger('hamburger')} />
+		<div class="nav-links nav-links-mobile" class:visible={isHamburgerActive}>
+			<a href="#about" on:click={() => (isHamburgerActive = false)}>about</a>
+			<a href="#projects" on:click={() => (isHamburgerActive = false)}>projects</a>
+			<a href="#contact" on:click={() => (isHamburgerActive = false)}>contact</a>
+		</div>
 	</div>
 	<div class="nav-links nav-links-desktop" class:visible={isHamburgerActive}>
 		<a href="#about">about</a>

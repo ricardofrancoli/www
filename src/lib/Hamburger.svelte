@@ -1,13 +1,9 @@
 <script lang="ts">
-	export let isActive = false;
+	export let isActive: boolean;
 </script>
 
 <div class="hamburger-container">
-	<button
-		class="hamburger hamburger--spring {isActive ? 'is-active' : ''}"
-		type="button"
-		on:click={() => (isActive = !isActive)}
-	>
+	<button class="hamburger hamburger--spring {isActive ? 'is-active' : ''}" type="button" on:click>
 		<span class="hamburger-box">
 			<span class="hamburger-inner" />
 		</span>
