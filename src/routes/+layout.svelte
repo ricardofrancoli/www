@@ -4,7 +4,7 @@
 	import Hamburger from '$lib/Hamburger.svelte';
 	import ThemeToggle from '$lib/ThemeToggle/ThemeToggle.svelte';
 
-	let isHamburgerActive = true;
+	let isHamburgerActive = false;
 
 	const toggleHamburger = (from: 'hamburger' | 'clickOutside') => {
 		if (from === 'clickOutside' && !isHamburgerActive) {
