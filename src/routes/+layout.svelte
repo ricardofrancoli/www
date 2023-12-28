@@ -5,6 +5,8 @@
 	import ThemeToggle from '$lib/ThemeToggle/ThemeToggle.svelte';
 
 	let isHamburgerActive = false;
+	let mainWrapper: HTMLElement;
+	let scrollY: number;
 
 	const toggleHamburger = (from: 'hamburger' | 'clickOutside') => {
 		if (from === 'clickOutside' && !isHamburgerActive) {
@@ -12,8 +14,20 @@
 		}
 
 		isHamburgerActive = !isHamburgerActive;
+
+		if (isHamburgerActive) {
+			mainWrapper.style.position = 'fixed';
+			mainWrapper.style.top = `-${scrollY}px`;
+		} else {
+			scrollY = (parseInt(mainWrapper.style.top) || 0) * -1;
+
+			mainWrapper.style.position = '';
+			mainWrapper.style.top = '';
+		}
 	};
 </script>
+
+<svelte:window bind:scrollY />
 
 <nav class="nav">
 	<div class="theme-toggle" class:blurred={isHamburgerActive}>
@@ -37,7 +51,7 @@
 		<a href="#contact">contact</a>
 	</div>
 </nav>
-<div class="content" class:blurred={isHamburgerActive}>
+<div class="content" class:blurred={isHamburgerActive} bind:this={mainWrapper}>
 	<slot />
 </div>
 
@@ -50,6 +64,7 @@
 	}
 
 	:root {
+		--nav-height: 4rem;
 		background-color: var(--background-colour);
 		color: var(--text-colour);
 		margin: 0 5vw 0 5vw;
@@ -69,7 +84,7 @@
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		height: 4rem;
+		height: var(--nav-height);
 		z-index: 1000;
 
 		.nav-links {
@@ -132,6 +147,12 @@
 
 		&.blurred {
 			filter: blur(30px);
+			left: 50%;
+			right: 50%;
+			width: 85vw;
+			transform: translate(-50%);
+			user-select: none;
+			pointer-events: none;
 		}
 
 		@media not (--mobile-only) {
