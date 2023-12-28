@@ -84,8 +84,8 @@
 
 			.nav-links-mobile {
 				position: fixed;
-				right: 50%;
-				transform: translate(50%, 50%);
+				top: 7rem;
+				right: 5vw;
 				flex-direction: column;
 				align-items: flex-end;
 				visibility: hidden;
