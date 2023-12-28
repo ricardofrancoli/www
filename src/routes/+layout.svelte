@@ -88,7 +88,7 @@
 				transform: translate(50%, 50%);
 				flex-direction: column;
 				align-items: flex-end;
-				visibility: none;
+				visibility: hidden;
 				opacity: 0;
 				font-size: 3rem;
 				transition-property: display;
