@@ -57,7 +57,7 @@
 	h1 {
 		margin: 0;
 		line-height: 95%;
-		font-size: 2rem;
+		font-size: var(--h1-0);
 		font-weight: 600;
 	}
 
@@ -83,20 +83,20 @@
 
 	@media (--xs) {
 		h1 {
-			font-size: 3rem;
+			font-size: var(--h1-1);
 		}
 	}
 
 	@media (--md) {
 		h1 {
 			line-height: 90%;
-			font-size: 4rem;
+			font-size: var(--h1-2);
 		}
 	}
 
 	@media (--lg) {
 		h1 {
-			font-size: 5rem;
+			font-size: var(--h1-3);
 		}
 	}
 </style>

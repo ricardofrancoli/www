@@ -12,7 +12,7 @@
 	@import '../styles/variables.css';
 
 	h2 {
-		font-size: 4rem;
+		font-size: var(--h2-0);
 		width: max-content;
 		margin: 0;
 		margin-bottom: 2rem;
@@ -23,5 +23,23 @@
 		background-repeat: no-repeat;
 		background-size: 100% 0.2em;
 		background-position: 0 88%;
+	}
+
+	@media (--xs) {
+		h2 {
+			font-size: var(--h2-1);
+		}
+	}
+
+	@media (--md) {
+		h2 {
+			font-size: var(--h2-2);
+		}
+	}
+
+	@media (--lg) {
+		h2 {
+			font-size: var(--h2-3);
+		}
 	}
 </style>

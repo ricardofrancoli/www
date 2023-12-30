@@ -24,6 +24,15 @@
 	--cubic-bezier-ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 	--cubic-bezier-ease-in-quicker: cubic-bezier(0.33333, 0, 0.66667, 0.33333);
 	--cubic-bezier-quick: cubic-bezier(0.215, 0.61, 0.355, 1);
+	/* Headings */
+	--h1-0: 2rem;
+	--h1-1: 3rem;
+	--h1-2: 4rem;
+	--h1-3: 5rem;
+	--h2-0: calc(var(--h1-0) - 0.5rem);
+	--h2-1: calc(var(--h1-1) - 0.5rem);
+	--h2-2: calc(var(--h1-2) - 0.5rem);
+	--h2-3: calc(var(--h1-3) - 0.5rem);
 	/* Misc */
 	--border-radius: 20px;
 	--nav-height: 4rem;
