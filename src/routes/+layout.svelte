@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '@fontsource-variable/sora';
 	import { clickOutside } from '../utils/clickOutside';
+	import Ellipses from '$lib/Ellipses.svelte';
 	import Hamburger from '$lib/Hamburger.svelte';
 	import ThemeToggle from '$lib/ThemeToggle/ThemeToggle.svelte';
 
@@ -28,6 +29,10 @@
 </script>
 
 <svelte:window bind:scrollY />
+
+<div class="ellipses-container">
+	<Ellipses />
+</div>
 
 <nav class="nav">
 	<div class="theme-toggle" class:blurred={isHamburgerActive}>
@@ -80,6 +85,11 @@
 
 	:global(body) {
 		margin: 0;
+	}
+
+	.ellipses-container {
+		position: absolute;
+		left: 0;
 	}
 
 	.nav {
