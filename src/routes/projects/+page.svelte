@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Project from '$lib/Project.svelte';
+	import Section from '$lib/Section.svelte';
+
 	import type { Project as ProjectType } from '../../types/project';
 
 	const projects: ProjectType[] = [
@@ -48,14 +50,13 @@
 	];
 </script>
 
-<section id="projects">
-	<h2>Projects</h2>
+<Section id="projects" title="projects">
 	<div class="projects-container">
 		{#each projects as project}
 			<Project {project} />
 		{/each}
 	</div>
-</section>
+</Section>
 
 <style lang="postcss">
 	@import '../../styles/variables.css';

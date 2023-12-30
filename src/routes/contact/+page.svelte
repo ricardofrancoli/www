@@ -4,6 +4,7 @@
 	import Linkedin from '$lib/assets/socials/linkedin.svg';
 	import Button from '$lib/Button.svelte';
 	import Icon from '$lib/Icon.svelte';
+	import Section from '$lib/Section.svelte';
 
 	const socialIcons = [
 		{ href: 'https://github.com/ricardofrancoli', svg: Github },
@@ -12,9 +13,7 @@
 	] as const;
 </script>
 
-<section id="contact">
-	<h2>Contact</h2>
-
+<Section id="contact" title="contact">
 	<div class="contact-container">
 		<h3>Ready for a chat?</h3>
 		<Button text="Get in touch" href="mailto:francoli@gmail.com" />
@@ -27,7 +26,7 @@
 			{/each}
 		</div>
 	</div>
-</section>
+</Section>
 
 <style lang="postcss">
 	.contact-container {

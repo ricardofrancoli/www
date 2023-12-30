@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Section from '$lib/Section.svelte';
 	import Stack from '$lib/Stack.svelte';
 	import { getStackAssetPaths } from '../../utils';
 
@@ -8,8 +9,7 @@
 		.map(({ value }) => value);
 </script>
 
-<section id="about">
-	<h2>About</h2>
+<Section id="about" title="about">
 	<div class="text-container">
 		<p>
 			I've always been a bit of a tech whizz, but due to a sequence of choices post-high school I
@@ -28,14 +28,10 @@
 			<Stack {svgSrc} />
 		{/each}
 	</div>
-</section>
+</Section>
 
 <style lang="postcss">
 	@import '../../styles/variables.css';
-
-	#about {
-		background-color: var(--background-colour); /* TODO: make lighter */
-	}
 
 	.stacks {
 		display: grid;
