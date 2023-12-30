@@ -99,7 +99,8 @@
 	.ellipses {
 		z-index: 1;
 		position: relative;
-		overflow: hidden;
+		overflow-x: clip;
+		overflow-y: visible;
 		width: 100vw;
 		height: 100vh;
 	}
