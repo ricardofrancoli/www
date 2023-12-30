@@ -1,5 +1,6 @@
 <script lang="ts">
 	import heart from '$lib/assets/heart.svg';
+	import ArrowDown from '$lib/ArrowDown.svelte';
 	import Icon from '$lib/Icon.svelte';
 
 	import About from './about/+page.svelte';
@@ -12,6 +13,9 @@
 		<h1 class="main-header">Hi <span class="hi-hand">👋</span> I'm Ricardo.</h1>
 		<h1 class="secondary-header">A <span class="web-dev-role">web developer</span>.</h1>
 	</header>
+</div>
+<div class="scroll-down-container">
+	<ArrowDown />
 </div>
 
 <main class="main-content">
@@ -40,9 +44,15 @@
 		justify-content: center;
 	}
 
+	.scroll-down-container {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
 	.header-container {
 		width: max-content;
-		height: calc(100vh - var(--nav-height));
+		height: calc(100vh - var(--nav-height) - var(--scroll-down-height));
 		margin: 0 10px;
 		display: flex;
 		flex-direction: column;
