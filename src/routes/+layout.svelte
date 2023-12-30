@@ -6,6 +6,7 @@
 	import ThemeToggle from '$lib/ThemeToggle/ThemeToggle.svelte';
 
 	let isHamburgerActive = false;
+	let ellipsesContainer: HTMLElement;
 	let mainWrapper: HTMLElement;
 	let scrollY: number;
 
@@ -17,11 +18,15 @@
 		isHamburgerActive = !isHamburgerActive;
 
 		if (isHamburgerActive) {
+			const formattedScrollY = `-${scrollY}px`;
+
+			ellipsesContainer.style.top = formattedScrollY;
 			mainWrapper.style.position = 'fixed';
-			mainWrapper.style.top = `-${scrollY}px`;
+			mainWrapper.style.top = formattedScrollY;
 		} else {
 			scrollY = (parseInt(mainWrapper.style.top) || 0) * -1;
 
+			ellipsesContainer.style.top = '';
 			mainWrapper.style.position = '';
 			mainWrapper.style.top = '';
 		}
@@ -30,7 +35,7 @@
 
 <svelte:window bind:scrollY />
 
-<div class="ellipses-container">
+<div class="ellipses-container" class:inactive={isHamburgerActive} bind:this={ellipsesContainer}>
 	<Ellipses />
 </div>
 
@@ -89,6 +94,16 @@
 	.ellipses-container {
 		position: absolute;
 		left: 0;
+		opacity: 1;
+		visibility: visible;
+		transition-property: visibility, opacity;
+		transition: visibility 0.3s var(--cubic-bezier-ease-in),
+			opacity 0.3s var(--cubic-bezier-ease-in);
+
+		&.inactive {
+			opacity: 0;
+			visibility: hidden;
+		}
 	}
 
 	.nav {
@@ -167,6 +182,12 @@
 			transform: translate(-50%);
 			user-select: none;
 			pointer-events: none;
+		}
+
+		@media (--md) {
+			&.blurred {
+				width: 80vw;
+			}
 		}
 
 		@media not (--mobile-only) {
