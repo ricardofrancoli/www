@@ -9,7 +9,7 @@
 
 <div class="outer-container">
 	<header class="header-container">
-		<h1 class="main-header">Hi <span>👋</span> I'm Ricardo.</h1>
+		<h1 class="main-header">Hi <span class="hi-hand">👋</span> I'm Ricardo.</h1>
 		<h1 class="secondary-header">A <span class="web-dev-role">web developer</span>.</h1>
 	</header>
 </div>
@@ -79,6 +79,33 @@
 			width: 0.75rem;
 			color: var(--tertiary-colour);
 		}
+	}
+
+	@keyframes wave-animation {
+		0% {
+			transform: rotate(0deg);
+		}
+		20% {
+			transform: rotate(14deg);
+		}
+		40% {
+			transform: rotate(-8deg);
+		}
+		60% {
+			transform: rotate(14deg);
+		}
+		80% {
+			transform: rotate(-8deg);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+
+	.hi-hand {
+		animation: wave-animation 0.75s 1;
+		transform-origin: 70% 70%;
+		display: inline-block;
 	}
 
 	@media (--xs) {
