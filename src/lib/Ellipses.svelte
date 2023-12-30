@@ -191,11 +191,11 @@
 
 		@media (--md) {
 			&.top-left {
-				top: 5%;
+				top: 15%;
 				left: 5%;
 			}
 			&.top-right {
-				top: -5%;
+				top: 10%;
 				left: 80%;
 			}
 			&.bottom-left {
@@ -238,7 +238,7 @@
 			}
 			&.bottom-left {
 				top: 95%;
-				left: 15%;
+				left: 20%;
 			}
 			&.bottom-right {
 				top: 65%;
