@@ -1,9 +1,33 @@
 <script lang="ts">
+	import css from '$lib/assets/stacks/css.svg?raw';
+	import docker from '$lib/assets/stacks/docker.svg?raw';
+	import express from '$lib/assets/stacks/express.svg?raw';
+	import jest from '$lib/assets/stacks/jest.svg?raw';
+	import mongodb from '$lib/assets/stacks/mongodb.svg?raw';
+	import mysql from '$lib/assets/stacks/mysql.svg?raw';
+	import nodejs from '$lib/assets/stacks/nodejs.svg?raw';
+	import python from '$lib/assets/stacks/python.svg?raw';
+	import react from '$lib/assets/stacks/react.svg?raw';
+	import svelte from '$lib/assets/stacks/svelte.svg?raw';
+	import typescript from '$lib/assets/stacks/typescript.svg?raw';
+	import vue from '$lib/assets/stacks/vue.svg?raw';
 	import Section from '$lib/Section.svelte';
 	import Stack from '$lib/Stack.svelte';
-	import { getStackAssetPaths } from '../../utils';
 
-	const svgAssetSrcs = getStackAssetPaths()
+	const svgAssets = [
+		{ src: css, stackName: 'css' },
+		{ src: docker, stackName: 'docker' },
+		{ src: express, stackName: 'express' },
+		{ src: jest, stackName: 'jest' },
+		{ src: mongodb, stackName: 'mongodb' },
+		{ src: mysql, stackName: 'mysql' },
+		{ src: nodejs, stackName: 'nodejs' },
+		{ src: python, stackName: 'python' },
+		{ src: react, stackName: 'react' },
+		{ src: svelte, stackName: 'svelte' },
+		{ src: typescript, stackName: 'typescript' },
+		{ src: vue, stackName: 'vue' }
+	]
 		.map((value) => ({ value, sort: Math.random() }))
 		.sort((a, b) => a.sort - b.sort)
 		.map(({ value }) => value);
@@ -24,8 +48,8 @@
 	</div>
 	<h3>Stack</h3>
 	<div class="stacks">
-		{#each svgAssetSrcs as svgSrc}
-			<Stack {svgSrc} />
+		{#each svgAssets as svgAsset}
+			<Stack svgSrc={svgAsset.src} stackName={svgAsset.stackName} />
 		{/each}
 	</div>
 </Section>
@@ -37,9 +61,7 @@
 		display: grid;
 		gap: 0.75rem;
 		justify-content: space-between;
-		/* grid-template-columns: repeat(auto-fit, 25%); */
 		grid-template-columns: repeat(2, min-content);
-		/* grid-template-columns: repeat(2, minmax(5rem, 1fr)); */
 	}
 
 	@media (--2xs) {

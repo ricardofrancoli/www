@@ -1,15 +1,14 @@
 <script lang="ts">
-	import Github from '$lib/assets/socials/github.svg';
-	import Instagram from '$lib/assets/socials/instagram.svg';
-	import Linkedin from '$lib/assets/socials/linkedin.svg';
+	import github from '$lib/assets/socials/github.svg?raw';
+	import instagram from '$lib/assets/socials/instagram.svg?raw';
+	import linkedin from '$lib/assets/socials/linkedin.svg?raw';
 	import Button from '$lib/Button.svelte';
-	import Icon from '$lib/Icon.svelte';
 	import Section from '$lib/Section.svelte';
 
 	const socialIcons = [
-		{ href: 'https://github.com/ricardofrancoli', svg: Github },
-		{ href: 'https://www.instagram.com/ricardofrancoli/', svg: Instagram },
-		{ href: 'https://www.linkedin.com/in/ricardofrancoli/', svg: Linkedin }
+		{ href: 'https://github.com/ricardofrancoli', svg: github },
+		{ href: 'https://www.instagram.com/ricardofrancoli/', svg: instagram },
+		{ href: 'https://www.linkedin.com/in/ricardofrancoli/', svg: linkedin }
 	] as const;
 </script>
 
@@ -21,7 +20,7 @@
 		<div class="social-icons">
 			{#each socialIcons as socialIcon}
 				<a class="social-icon" href={socialIcon.href} target="_blank">
-					<Icon src={socialIcon.svg} renderRaw={false} viewBox={24} useBackgroundColour={false} />
+					{@html socialIcon.svg}
 				</a>
 			{/each}
 		</div>
@@ -51,6 +50,7 @@
 		.social-icon {
 			height: 2rem;
 			width: 2rem;
+			fill: var(--text-colour);
 		}
 	}
 </style>

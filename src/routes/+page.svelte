@@ -1,7 +1,6 @@
 <script lang="ts">
-	import heart from '$lib/assets/heart.svg';
+	import heart from '$lib/assets/heart.svg?raw';
 	import ArrowDown from '$lib/ArrowDown.svelte';
-	import Icon from '$lib/Icon.svelte';
 
 	import About from './about/+page.svelte';
 	import Contact from './contact/+page.svelte';
@@ -27,7 +26,7 @@
 <footer>
 	<span>Made with</span>
 	<div class="love">
-		<Icon src={heart} viewBox={24} useBackgroundColour={false} />
+		{@html heart}
 	</div>
 	<span>by Ricardo</span>
 </footer>

@@ -1,8 +1,6 @@
 <script lang="ts">
-	import Icon from './Icon.svelte';
-
 	export let svgSrc: string;
-	$: stackName = svgSrc.replace('.svg', '').split('/').pop();
+	export let stackName: string;
 
 	const colours = [
 		'--primary-colour',
@@ -16,7 +14,7 @@
 <div class="stack">
 	<div class="stack-icon-container" style="background-color: var({randomColourVariable});">
 		<div class="stack-icon">
-			<Icon src={svgSrc} />
+			{@html svgSrc}
 		</div>
 	</div>
 	<p class="stack-name">
@@ -48,6 +46,7 @@
 		.stack-icon {
 			width: 75%;
 			height: 75%;
+			fill: var(--background-colour);
 		}
 	}
 
