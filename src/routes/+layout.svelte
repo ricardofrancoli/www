@@ -69,7 +69,6 @@
 	}
 
 	:root {
-		--nav-height: 4rem;
 		background-color: var(--background-colour);
 		color: var(--text-colour);
 		margin: 0 5vw 0 5vw;

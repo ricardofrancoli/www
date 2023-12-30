@@ -26,6 +26,7 @@
 	--cubic-bezier-quick: cubic-bezier(0.215, 0.61, 0.355, 1);
 	/* Misc */
 	--border-radius: 20px;
+	--nav-height: 4rem;
 }
 
 /* Responsive layout widths */

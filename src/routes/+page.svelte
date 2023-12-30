@@ -8,10 +8,10 @@
 </script>
 
 <div class="outer-container">
-	<div class="header-container">
+	<header class="header-container">
 		<h1 class="main-header">Hi <span>👋</span> I'm Ricardo.</h1>
 		<h1 class="secondary-header">A <span class="web-dev-role">web developer</span>.</h1>
-	</div>
+	</header>
 </div>
 
 <main class="main-content">
@@ -33,27 +33,32 @@
 
 	.outer-container {
 		position: relative;
+		left: calc(-50vw + 50%);
 		z-index: 100;
-		width: 100%;
+		width: 100vw;
 		display: flex;
+		justify-content: center;
 	}
 
 	.header-container {
-		width: fit-content;
-		height: 50vh;
+		width: max-content;
+		height: calc(100vh - var(--nav-height));
+		margin: 0 10px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-
-		h1 {
-			margin: 0;
-			line-height: 95%;
-			font-weight: 600;
-		}
+		align-items: flex-start;
 
 		.web-dev-role {
 			color: var(--primary-colour);
 		}
+	}
+
+	h1 {
+		margin: 0;
+		line-height: 95%;
+		font-size: 2rem;
+		font-weight: 600;
 	}
 
 	.main-content {
@@ -76,18 +81,16 @@
 		}
 	}
 
+	@media (--xs) {
+		h1 {
+			font-size: 3rem;
+		}
+	}
+
 	@media (--md) {
-		.outer-container {
-			justify-content: center;
-		}
-
-		.header-container {
-			height: 100vh;
-		}
-
 		h1 {
 			line-height: 90%;
-			font-size: 3rem;
+			font-size: 4rem;
 		}
 	}
 
