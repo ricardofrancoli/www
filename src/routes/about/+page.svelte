@@ -15,22 +15,19 @@
 	import Stack from '$lib/Stack.svelte';
 
 	const svgAssets = [
-		{ src: css, stackName: 'css' },
-		{ src: docker, stackName: 'docker' },
-		{ src: express, stackName: 'express' },
-		{ src: jest, stackName: 'jest' },
-		{ src: mongodb, stackName: 'mongodb' },
-		{ src: mysql, stackName: 'mysql' },
-		{ src: nodejs, stackName: 'nodejs' },
-		{ src: python, stackName: 'python' },
+		{ src: typescript, stackName: 'typescript' },
+		{ src: vue, stackName: 'vue' },
 		{ src: react, stackName: 'react' },
 		{ src: svelte, stackName: 'svelte' },
-		{ src: typescript, stackName: 'typescript' },
-		{ src: vue, stackName: 'vue' }
-	]
-		.map((value) => ({ value, sort: Math.random() }))
-		.sort((a, b) => a.sort - b.sort)
-		.map(({ value }) => value);
+		{ src: css, stackName: 'css' },
+		{ src: nodejs, stackName: 'nodejs' },
+		{ src: express, stackName: 'express' },
+		{ src: docker, stackName: 'docker' },
+		{ src: mysql, stackName: 'mysql' },
+		{ src: mongodb, stackName: 'mongodb' },
+		{ src: jest, stackName: 'jest' },
+		{ src: python, stackName: 'python' }
+	];
 </script>
 
 <Section id="about" title="about">
