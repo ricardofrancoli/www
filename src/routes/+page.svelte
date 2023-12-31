@@ -1,5 +1,6 @@
 <script lang="ts">
 	import heart from '$lib/assets/heart.svg?raw';
+	import star from '$lib/assets/star.svg?raw';
 	import ArrowDown from '$lib/ArrowDown.svelte';
 
 	import About from './about/+page.svelte';
@@ -24,11 +25,20 @@
 </main>
 
 <footer>
-	<span>Made with</span>
-	<div class="love">
-		{@html heart}
+	<div class="signed ricky">
+		<span>Made with</span>
+		<div class="love">
+			{@html heart}
+		</div>
+		<span>by Ricardo</span>
 	</div>
-	<span>by Ricardo</span>
+	<div class="signed tor">
+		<span>Designed with</span>
+		<div class="star">
+			{@html star}
+		</div>
+		<span>by Tor</span>
+	</div>
 </footer>
 
 <style lang="postcss">
@@ -78,16 +88,33 @@
 
 	footer {
 		display: flex;
-		justify-content: center;
-		gap: 0.25rem;
+		flex-direction: column;
 		margin-top: 5rem;
 		margin-bottom: 1rem;
-		font-size: 0.75rem;
-		color: var(--primary-colour);
 
-		.love {
+		.signed {
+			display: flex;
+			justify-content: center;
+			gap: 0.25rem;
+			font-size: 0.75rem;
+
+			&.ricky {
+				color: var(--primary-colour);
+			}
+			&.tor {
+				color: var(--secondary-colour);
+			}
+		}
+
+		.love,
+		.star {
 			width: 0.75rem;
 			color: var(--tertiary-colour);
+		}
+
+		.star {
+			width: 0.8rem;
+			stroke: var(--tertiary-colour);
 		}
 	}
 
