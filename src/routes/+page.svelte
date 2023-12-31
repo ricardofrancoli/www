@@ -81,6 +81,7 @@
 		justify-content: center;
 		gap: 0.25rem;
 		margin-top: 5rem;
+		margin-bottom: 1rem;
 		font-size: 0.75rem;
 		color: var(--primary-colour);
 
