@@ -1,11 +1,11 @@
 /* Light Mode */
 :root.light {
 	--background-colour: #e3e3e3;
-	--accent-colour: #c6ff24;
+	--accent-colour: #80bdff;
 	--text-colour: #191919;
 	--primary-colour: #f05782;
 	--secondary-colour: #1b998b;
-	--tertiary-colour: #5d8079; /* TODO: Find another one */
+	--tertiary-colour: #fd7c6e;
 }
 
 /* Dark Mode */
