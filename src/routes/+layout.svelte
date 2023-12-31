@@ -76,6 +76,8 @@
 	:root {
 		background-color: var(--background-colour);
 		color: var(--text-colour);
+		transition: background-color 250ms var(--cubic-bezier-quick);
+		scroll-behavior: smooth;
 		margin: 0 5vw 0 5vw;
 
 		@media (--md) {
