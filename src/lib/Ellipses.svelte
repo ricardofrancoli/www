@@ -101,7 +101,6 @@
 		position: relative;
 		overflow-x: clip;
 		overflow-y: visible;
-		width: 100vw;
 		height: 100vh;
 	}
 

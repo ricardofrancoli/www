@@ -102,6 +102,7 @@
 		left: 0;
 		opacity: 1;
 		visibility: visible;
+		width: 100%;
 		transition-property: visibility, opacity;
 		transition: visibility 0.3s var(--cubic-bezier-ease-in),
 			opacity 0.3s var(--cubic-bezier-ease-in);

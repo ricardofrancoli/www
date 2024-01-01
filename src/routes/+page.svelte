@@ -45,10 +45,8 @@
 	@import '../styles/variables.css';
 
 	.outer-container {
-		position: relative;
-		left: calc(-50vw + 50%);
 		z-index: 100;
-		width: 100vw;
+		width: 100%;
 		display: flex;
 		justify-content: center;
 	}
