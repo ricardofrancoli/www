@@ -50,9 +50,9 @@
 	>
 		<Hamburger isActive={isHamburgerActive} on:click={() => toggleHamburger('hamburger')} />
 		<div class="nav-links nav-links-mobile" class:visible={isHamburgerActive}>
-			<a href="#about" on:click={() => (isHamburgerActive = false)}>about</a>
-			<a href="#projects" on:click={() => (isHamburgerActive = false)}>projects</a>
-			<a href="#contact" on:click={() => (isHamburgerActive = false)}>contact</a>
+			<a href="#about" on:click={() => toggleHamburger('hamburger')}>about</a>
+			<a href="#projects" on:click={() => toggleHamburger('hamburger')}>projects</a>
+			<a href="#contact" on:click={() => toggleHamburger('hamburger')}>contact</a>
 		</div>
 	</div>
 	<div class="nav-links nav-links-desktop" class:visible={isHamburgerActive}>
@@ -77,7 +77,6 @@
 		background-color: var(--background-colour);
 		color: var(--text-colour);
 		transition: background-color 250ms var(--cubic-bezier-quick);
-		scroll-behavior: smooth;
 		margin: 0 5vw 0 5vw;
 
 		@media (--md) {
@@ -86,6 +85,10 @@
 
 		@media (--lg) {
 			margin: 0 20vw 0 20vw;
+		}
+
+		@media not (--mobile-only) {
+			scroll-behavior: smooth;
 		}
 	}
 
