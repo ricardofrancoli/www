@@ -45,6 +45,7 @@
 	@import '../styles/variables.css';
 
 	.outer-container {
+		position: relative;
 		z-index: 100;
 		width: 100%;
 		display: flex;
