@@ -50,6 +50,7 @@
 	>
 		<Hamburger isActive={isHamburgerActive} on:click={() => toggleHamburger('hamburger')} />
 		<div class="nav-links nav-links-mobile" class:visible={isHamburgerActive}>
+			<a href="/" on:click={() => toggleHamburger('hamburger')}>home</a>
 			<a href="#about" on:click={() => toggleHamburger('hamburger')}>about</a>
 			<a href="#projects" on:click={() => toggleHamburger('hamburger')}>projects</a>
 			<a href="#contact" on:click={() => toggleHamburger('hamburger')}>contact</a>
