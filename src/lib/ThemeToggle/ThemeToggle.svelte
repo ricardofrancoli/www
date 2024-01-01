@@ -40,7 +40,9 @@
 <svelte:head>
 	<script>
 		(() => {
-			const isDarkMode = sessionStorage.theme === 'dark';
+			const isDarkMode =
+				sessionStorage.theme === 'dark' ??
+				window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 			if (isDarkMode) {
 				document.documentElement.classList.add('dark');
