@@ -35,7 +35,7 @@
 	--h2-3: calc(var(--h1-3) - 0.5rem);
 	/* Misc */
 	--border-radius: 20px;
-	--scroll-down-height: 5rem;
+	--scroll-down-height: 8rem;
 	--nav-height: 4rem;
 }
 
