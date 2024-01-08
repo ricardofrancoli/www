@@ -23,7 +23,7 @@
 </div>
 
 <style lang="postcss">
-	@import '../styles/variables.css';
+	@import '../styles/variables.postcss';
 
 	.stack {
 		width: 5rem;

@@ -68,7 +68,7 @@
 </div>
 
 <style lang="postcss">
-	@import '../styles/variables.css';
+	@import '../styles/variables.postcss';
 
 	.mobile-mockup-container {
 		overflow: hidden;

@@ -30,7 +30,7 @@
 </div>
 
 <style lang="postcss">
-	@import '../../styles/variables.css';
+	@import '../../styles/variables.postcss';
 
 	button {
 		background: none;

@@ -1,21 +1,22 @@
-/* Light Mode */
-:root.light {
-	--background-colour: #e3e3e3;
-	--accent-colour: #80bdff;
-	--text-colour: #191919;
-	--primary-colour: #f05782;
-	--secondary-colour: #1b998b;
-	--tertiary-colour: #fd7c6e;
+@import './mixins.postcss';
+
+/* Theme will be set up when first opened */
+:root {
+	&,
+	&[data-theme='light'] {
+		@mixin light;
+	}
+
+	&[data-theme='dark'] {
+		@mixin dark;
+	}
 }
 
-/* Dark Mode */
-:root.dark {
-	--background-colour: #191919;
-	--accent-colour: #c6ff24;
-	--text-colour: #e3e3e3;
-	--primary-colour: #edb340;
-	--secondary-colour: #1b998b;
-	--tertiary-colour: #f05782;
+/* If dark mode, default to this */
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		@mixin dark;
+	}
 }
 
 :root {

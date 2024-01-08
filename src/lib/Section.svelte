@@ -9,7 +9,7 @@
 </section>
 
 <style lang="postcss">
-	@import '../styles/variables.css';
+	@import '../styles/variables.postcss';
 
 	h2 {
 		font-size: var(--h2-0);

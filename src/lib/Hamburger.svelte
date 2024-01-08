@@ -11,7 +11,7 @@
 </div>
 
 <style lang="postcss">
-	@import '../styles/variables.css';
+	@import '../styles/variables.postcss';
 
 	.hamburger-container {
 		position: fixed;
