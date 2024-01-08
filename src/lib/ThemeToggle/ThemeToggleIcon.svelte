@@ -6,9 +6,6 @@
 		dispatch('switchDarkMode');
 	};
 
-	export let isDarkMode: boolean;
-	console.log('isDarkMode', isDarkMode);
-
 	let width = '2rem';
 	let height = '2rem';
 
@@ -19,7 +16,7 @@
 </script>
 
 <div>
-	<button on:click={dispatchSwitchDarkMode}>
+	<button on:click>
 		<svg class="moon-icon" {width} {height} viewBox="0 0 48 48">
 			{@html iconSvgs.moon}
 		</svg>
@@ -46,11 +43,11 @@
 		fill: var(--text-colour);
 	}
 
-	:global(.light) .moon-icon {
+	:global([data-theme='light']) .moon-icon {
 		display: block;
 	}
 
-	:global(.dark) .sun-icon {
+	:global([data-theme='dark']) .sun-icon {
 		display: block;
 	}
 </style>

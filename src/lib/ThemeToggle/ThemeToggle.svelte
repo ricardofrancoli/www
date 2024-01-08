@@ -1,59 +1,46 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 	import ThemeToggleIcon from './ThemeToggleIcon.svelte';
 
-	const getIsDarkMode = () => {
-		if (import.meta.env.SSR) {
-			return false;
-		}
+	type Theme = 'light' | 'dark';
 
-		const sessionData = window.sessionStorage.getItem('theme');
+	let currentTheme: Theme;
 
-		if (sessionData) {
-			return sessionData === 'dark';
-		}
+	const setTheme = (theme: Theme) => {
+		sessionStorage.setItem('theme', theme);
+		document.documentElement.setAttribute('data-theme', theme);
 
-		return window.matchMedia('(prefers-color-scheme: dark)').matches;
-	};
-
-	export let isDarkMode = getIsDarkMode();
-
-	export const setDocumentClassList = () => {
-		isDarkMode
-			? document.documentElement.classList.replace('light', 'dark')
-			: document.documentElement.classList.replace('dark', 'light');
+		currentTheme = theme;
 	};
 
 	const switchDarkMode = () => {
-		isDarkMode = !isDarkMode;
+		const upcomingTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-		setDocumentClassList();
+		document.documentElement.setAttribute('data-theme', upcomingTheme);
+		setTheme(upcomingTheme);
 
-		sessionStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+		currentTheme = upcomingTheme;
 	};
 
-	if (browser) {
-		setDocumentClassList();
-	}
+	const isCorrectTheme = (theme: string): theme is Theme => {
+		return ['light', 'dark'].includes(theme);
+	};
+
+	onMount(() => {
+		const savedTheme = document.documentElement.getAttribute('data-theme');
+		if (savedTheme && isCorrectTheme(savedTheme)) {
+			currentTheme = savedTheme;
+			return;
+		}
+
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		const theme = prefersDark ? 'dark' : 'light';
+		setTheme(theme);
+	});
 </script>
 
-<svelte:head>
-	<script>
-		(() => {
-			const isDarkMode =
-				sessionStorage.theme === 'dark' ??
-				window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-			if (isDarkMode) {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.add('light');
-			}
-		})();
-	</script>
-</svelte:head>
-
-<ThemeToggleIcon bind:isDarkMode on:switchDarkMode={switchDarkMode} />
+<ThemeToggleIcon on:click={switchDarkMode} />
 
 <style lang="postcss">
 </style>
