@@ -82,7 +82,7 @@
 			align-items: flex-end;
 			justify-content: left;
 			color: var(--text-colour);
-			gap: 0.5rem;
+			gap: 0.25rem;
 
 			& > p {
 				width: max-content;
@@ -95,7 +95,7 @@
 	}
 
 	svg {
-		margin-bottom: -1px;
+		transform: translateY(1px);
 
 		path {
 			stroke: var(--secondary-colour);
@@ -142,10 +142,10 @@
 
 				&.secondary {
 					svg {
-						transition-property: margin-bottom;
+						transition-property: transform;
 						transition-duration: var(--transition-duration);
 						transition-timing-function: var(--cubic-bezier-quick);
-						margin-bottom: 0px;
+						transform: translateY(0.5px);
 					}
 				}
 			}
