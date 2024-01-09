@@ -7,6 +7,10 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		sveltePreprocess({
+			defaults: {
+				script: 'typescript',
+				style: 'postcss'
+			},
 			postcss: true
 		})
 	],
