@@ -7,7 +7,7 @@
 	let currentTheme: Theme;
 
 	const setTheme = (theme: Theme) => {
-		sessionStorage.setItem('theme', theme);
+		localStorage.setItem('theme', theme);
 		document.documentElement.setAttribute('data-theme', theme);
 
 		currentTheme = theme;

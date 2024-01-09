@@ -1,4 +1,4 @@
-const savedTheme = sessionStorage.getItem('theme');
+const savedTheme = localStorage.getItem('theme');
 
 if (savedTheme) {
 	document.documentElement.setAttribute('data-theme', savedTheme);
@@ -7,5 +7,5 @@ if (savedTheme) {
 	const theme = prefersDark ? 'dark' : 'light';
 
 	document.documentElement.setAttribute('data-theme', theme);
-	sessionStorage.setItem('theme', theme);
+	localStorage.setItem('theme', theme);
 }
