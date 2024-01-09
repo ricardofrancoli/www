@@ -1,10 +1,10 @@
-import cssnano from 'cssnano';
-import atImport from 'postcss-import';
-import postcssMixins from 'postcss-mixins';
-import postcssPresetEnv from 'postcss-preset-env';
-import postcssCustomMedia from 'postcss-custom-media';
+const cssnano = require('cssnano');
+const atImport = require('postcss-import');
+const postcssMixins = require('postcss-mixins');
+const postcssPresetEnv = require('postcss-preset-env');
+const postcssCustomMedia = require('postcss-custom-media');
 
-export default {
+module.exports = {
 	plugins: [
 		cssnano({ preset: 'default' }),
 		atImport(),
