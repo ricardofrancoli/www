@@ -37,7 +37,7 @@
 		<div class="star">
 			{@html star}
 		</div>
-		<span>by Tor</span>
+		<span>by <a class="tor-link" href="https://torewen.com/" target="_blank">Tor</a></span>
 	</div>
 </footer>
 
@@ -100,7 +100,8 @@
 			&.ricky {
 				color: var(--primary-colour);
 			}
-			&.tor {
+			&.tor,
+			.tor-link {
 				color: var(--secondary-colour);
 			}
 		}
