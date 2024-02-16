@@ -15,7 +15,7 @@
 <Section id="contact" title="contact">
 	<div class="contact-container">
 		<h3>Ready for a chat?</h3>
-		<Button text="Get in touch" href="mailto:francoli@gmail.com" />
+		<Button text="Get in touch" href="mailto:ricardo@francoli.me" />
 
 		<div class="social-icons">
 			{#each socialIcons as socialIcon}
