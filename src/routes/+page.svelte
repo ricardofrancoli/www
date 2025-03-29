@@ -5,7 +5,7 @@
 
 	import About from './about/+page.svelte';
 	import Contact from './contact/+page.svelte';
-	import Projects from './projects/+page.svelte';
+	// import Projects from './projects/+page.svelte';
 </script>
 
 <div class="outer-container">
@@ -20,7 +20,7 @@
 
 <main class="main-content">
 	<About />
-	<Projects />
+	<!-- <Projects /> -->
 	<Contact />
 </main>
 
