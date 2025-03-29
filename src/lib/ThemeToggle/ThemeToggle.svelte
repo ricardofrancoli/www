@@ -41,6 +41,3 @@
 </script>
 
 <ThemeToggleIcon on:click={switchDarkMode} />
-
-<style lang="postcss">
-</style>
